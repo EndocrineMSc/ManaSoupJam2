@@ -10,7 +10,8 @@ namespace DreamCatcher.Lives
 
     //this class handles the usage of player lives and their
     //simple visual representation as buttons or sprites
-    //meant to be a component of the GameManager
+    //is a singleton
+
     public class LifeManager : MonoBehaviour
     {
         #region Fields
@@ -20,6 +21,8 @@ namespace DreamCatcher.Lives
         [SerializeField] private GameObject _lifeOne;
         [SerializeField] private GameObject _lifeTwo;
         [SerializeField] private GameObject _lifeThree;
+
+        public static LifeManager Instance;
 
         #endregion
 
@@ -78,6 +81,22 @@ namespace DreamCatcher.Lives
 
             }
 
+        }
+
+        #endregion
+
+        #region Private Functions
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+            }
         }
 
         #endregion
