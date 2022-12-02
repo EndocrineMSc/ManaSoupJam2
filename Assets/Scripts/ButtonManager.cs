@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
-using GameName;
-using GameName.Audio;
+using DreamCatcher;
+using DreamCatcher.Audio;
 
-namespace GameName.Buttons
+namespace DreamCatcher.Buttons
 {
 
     //this class is meant to provide simple functions for

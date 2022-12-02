@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameName;
+using DreamCatcher;
 using EnumCollection;
 
 
-namespace GameName.Lives
+namespace DreamCatcher.Lives
 {
 
     //this class handles the usage of player lives and their

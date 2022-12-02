@@ -2,14 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using EnumCollection;
-using GameName.Audio;
+using DreamCatcher.Audio;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
-using Newtonsoft.Json.Converters;
 
-namespace GameName
+namespace DreamCatcher
 {
     //The GameManager is a Singleton that is always present,
     //even when loading new Scenes
@@ -63,7 +61,7 @@ namespace GameName
 
                     CloseAllCanvases();
                     Instance._menuScreen.SetActive(true);
-                    AudioManager.Instance.FadeGameTrack(Track.MainMenu);
+                    AudioManager.Instance.FadeGameTrack(Track.MainMenu); // Fix this crap
                     break;
 
                 case (GameState.Credits):

@@ -1,12 +1,12 @@
-using GameName.Audio;
+using DreamCatcher.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using EnumCollection;
-using GameName;
+using DreamCatcher;
 
-namespace GameName.AudioOptions
+namespace DreamCatcher.AudioOptions
 {
     public class AudioOptionManager : MonoBehaviour
     {
