@@ -463,6 +463,18 @@ PrefabInstance:
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8740216384132533771, guid: 749eb8f442f4231419b345e981106620, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740216384132533771, guid: 749eb8f442f4231419b345e981106620, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740216384132533771, guid: 749eb8f442f4231419b345e981106620, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 749eb8f442f4231419b345e981106620, type: 3}
 --- !u!4 &1138724299 stripped
