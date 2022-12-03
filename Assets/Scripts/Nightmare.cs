@@ -12,7 +12,7 @@ namespace DreamCatcher.Nightmares
         GameObject _player;
         
         protected float _distance;
-        protected float _minimumDistance = 2;
+        protected float _minimumDistance = 1f;
         protected float _angle;
 
         protected Vector2 _direction = new();
