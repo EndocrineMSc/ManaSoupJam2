@@ -52,7 +52,7 @@ namespace DreamCatcher.Nightmares
 
             if (collision.gameObject.name.Contains("Sword"))
             {
-                LoseHealth(1);
+                StartCoroutine(LoseHealth(1));
             }
         }
 
@@ -79,21 +79,26 @@ namespace DreamCatcher.Nightmares
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        protected void LoseHealth(int damage)
-        {
-            _health -= damage;
 
-            if (_health <= 0)
-            {
-                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-                spriteRenderer.color = Color.red;
-                Destroy(this);
-            }
-        }
         #endregion
 
         #region IEnumerators
 
+        protected IEnumerator LoseHealth(int damage)
+        {
+            _health -= damage;
+
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            Color tempColor = spriteRenderer.color;
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.color = tempColor;
+
+            if (_health <= 0)
+            {
+                Destroy(this);
+            }
+        }
 
         #endregion
     }
