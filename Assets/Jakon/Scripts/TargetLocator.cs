@@ -57,17 +57,25 @@ public class TargetLocator : MonoBehaviour
 
     void Activate(NPC npcToActivate, bool isActive)
     {
-        
-        if (isActive && !cleanDreamParticles.isPlaying)
+        if(isActive)
         {
-            Debug.Log("Now it should start.");
-            cleanDreamParticles.Play();
-            npcToActivate.TurnOnBadEmission();
-        }
-        else if (!isActive)
+            npcToActivate.startConversion();
+        } 
+        else
         {
-            cleanDreamParticles.Stop();
+            npcToActivate.stopConversion();
         }
+
+        // if (isActive && !cleanDreamParticles.isPlaying)
+        // {
+        //     Debug.Log("Now it should start.");
+        //     cleanDreamParticles.Play();
+        //     npcToActivate.TurnOnBadEmission();
+        // }
+        // else if (!isActive)
+        // {
+        //     cleanDreamParticles.Stop();
+
            
     }
 
