@@ -52,6 +52,6 @@ public class WeaponBehavior : MonoBehaviour
             yield return new WaitForSeconds(attackDuration);
             resetAttack();
         }
-        #endregion
+    #endregion
 
 }

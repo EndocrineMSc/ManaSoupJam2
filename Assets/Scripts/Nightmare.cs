@@ -28,7 +28,7 @@ namespace DreamCatcher.Nightmares
         [SerializeField] protected float _speed;
         [SerializeField] protected float attackReach;
         [SerializeField] float iFrameSeconds;
-        [SerializeField] GameObject Attack;
+        [SerializeField] AttackBehavior myAttack;
         #endregion
 
         #region Properties
@@ -66,10 +66,13 @@ namespace DreamCatcher.Nightmares
 
         protected virtual void Update()
         {
+            Debug.DrawLine(myAttack.transform.position, _player.transform.position, Color.red, 40f);
+
             _distance = Vector2.Distance(transform.position, _player.transform.position);
             _direction = _player.transform.position - transform.position;
-            _direction.Normalize();
-            _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+            Vector2 normDirection = _direction;
+            normDirection.Normalize();
+            _angle = Mathf.Atan2(normDirection.y, normDirection.x) * Mathf.Rad2Deg;
             
             if (_distance > _minimumDistance)
             {
@@ -77,7 +80,7 @@ namespace DreamCatcher.Nightmares
             }
             else if (_distance <= attackReach)
             {
-                // Attack.attack(); get the direction from here, as the player position is already known
+                myAttack.attack(_player);
             }
         }
 
