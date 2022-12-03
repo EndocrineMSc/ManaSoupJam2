@@ -328,6 +328,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6023459510333931164, guid: 749eb8f442f4231419b345e981106620, type: 3}
+      propertyPath: playerWeapon
+      value: 
+      objectReference: {fileID: 1906262770}
+    - target: {fileID: 6023459510333931164, guid: 749eb8f442f4231419b345e981106620, type: 3}
+      propertyPath: attackDuration
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 749eb8f442f4231419b345e981106620, type: 3}
 --- !u!1 &734215154
@@ -469,6 +477,11 @@ PrefabInstance:
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 188017033512097465, guid: b180784018d31a44fb320c1061966500, type: 3}
   m_PrefabInstance: {fileID: 319267467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1906262770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3402534275062805507, guid: 749eb8f442f4231419b345e981106620, type: 3}
+  m_PrefabInstance: {fileID: 569313164}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2707919252592136575
 PrefabInstance:

@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
 {
 
     #region  Fields
-    [SerializeField] GameObject playerWeapon;
-
     private BoxCollider2D boxCollider;
 
     // private Vector3 moveDelta;
