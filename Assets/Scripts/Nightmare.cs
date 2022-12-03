@@ -45,14 +45,16 @@ namespace DreamCatcher.Nightmares
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
+            Debug.Log("Collide");
             if (collision.gameObject.name.Contains("Player"))
             {               
                 LifeManager.Instance.LoseLife();                            
             }
 
-            if (collision.gameObject.name.Contains("Sword"))
+            if (collision.gameObject.name.Contains("Weapon"))
             {
                 StartCoroutine(LoseHealth(1));
+                Debug.Log("Hit");
             }
         }
 
