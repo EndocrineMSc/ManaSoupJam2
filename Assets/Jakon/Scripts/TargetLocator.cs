@@ -8,13 +8,14 @@ public class TargetLocator : MonoBehaviour
     [SerializeField] float playerRange = 5f;
     Transform target;
 
-    
-  
+   
+
+
+
     void Update()
     {
         FindClosestTarget();
         ToggleEmission();
-        Activate(true);
     }
 
     void FindClosestTarget()
@@ -53,9 +54,17 @@ public class TargetLocator : MonoBehaviour
 
     void Activate(bool isActive)
     {
-        var emissionModule = cleanDreamParticles.emission;
-            emissionModule.enabled = isActive;
         
+        if (isActive && !cleanDreamParticles.isPlaying)
+        {
+            Debug.Log("Now it should start.");
+            cleanDreamParticles.Play();
+        }
+        else if (!isActive)
+        {
+            cleanDreamParticles.Stop();
+        }
+           
     }
 
 }
