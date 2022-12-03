@@ -183,10 +183,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3951471724190745709, guid: b180784018d31a44fb320c1061966500, type: 3}
-      propertyPath: cleanDreamParticles
-      value: 
-      objectReference: {fileID: 1563196677}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b180784018d31a44fb320c1061966500, type: 3}
 --- !u!1 &519420028
