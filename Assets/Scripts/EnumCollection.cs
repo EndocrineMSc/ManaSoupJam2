@@ -9,6 +9,7 @@ namespace EnumCollection
         Credits,
         Settings,
         HighscoreMenu,
+        Intro,
         Starting,
         GameOver,
         NewGame,
