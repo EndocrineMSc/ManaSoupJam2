@@ -13,6 +13,13 @@ public class NPC : MonoBehaviour
     private bool _isCleaning = false;
     private float _conversionCounter = 0;
 
+    public bool IsCleaned
+    {
+        get { return _isCleaned; }
+        private set { _isCleaned = value; }
+    }
+
+
     void Update()
     {
         if(_conversionCounter > 0)
