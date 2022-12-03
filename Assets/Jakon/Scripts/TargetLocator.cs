@@ -6,24 +6,23 @@ public class TargetLocator : MonoBehaviour
 {
     [SerializeField] ParticleSystem cleanDreamParticles;
     [SerializeField] float playerRange = 1f;
-    Transform target;
-    private NPC _npc;
-
-   
-
+    // Transform target;
+    // private NPC _npc;
 
     void Update()
     {
-        FindClosestTarget();
-        ToggleEmission();
+        NPC closestNPC = FindClosestTarget();
+        ToggleEmission(closestNPC);
     }
 
-    void FindClosestTarget()
+    private NPC FindClosestTarget()
     {
         NPC[] npcs = FindObjectsOfType<NPC>();
         Player player = FindObjectOfType<Player>();
-        Transform closestTarget = null;
+        // Transform closestTarget = null;
         float maxDistance = Mathf.Infinity;
+
+        NPC closestNPC = null;
 
         foreach(NPC npc in npcs)
         {
@@ -31,36 +30,39 @@ public class TargetLocator : MonoBehaviour
 
             if (targetDistance < maxDistance)
             {
-                closestTarget = npc.transform;
+                // closestTarget = npc.transform;
                 maxDistance = targetDistance;
-                _npc = npc;
+                // _npc = npc;
+                closestNPC = npc;
             }
         }
-        target = closestTarget;
+        // target = closestTarget;
+
+        return closestNPC;
      }
 
-    void ToggleEmission()
+    void ToggleEmission(NPC npcToToggle)
     {
         Player player = FindObjectOfType<Player>();
-        float targetDistance = Vector2.Distance(player.transform.position, target.position);
+        float targetDistance = Vector2.Distance(player.transform.position, npcToToggle.transform.position);
         if (targetDistance < playerRange)
         {
-            Activate(true);
+            Activate(npcToToggle, true);
         }
         else
         {
-            Activate(false);
+            Activate(npcToToggle, false);
         }
     }
 
-    void Activate(bool isActive)
+    void Activate(NPC npcToActivate, bool isActive)
     {
         
         if (isActive && !cleanDreamParticles.isPlaying)
         {
             Debug.Log("Now it should start.");
             cleanDreamParticles.Play();
-            _npc.TurnOnBadEmission();
+            npcToActivate.TurnOnBadEmission();
         }
         else if (!isActive)
         {
