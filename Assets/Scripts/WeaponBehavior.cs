@@ -13,7 +13,14 @@ public class WeaponBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resetAttack();
+    }
+
+    void resetAttack()
+    {
+        _attacking = false;
         GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -29,21 +36,21 @@ public class WeaponBehavior : MonoBehaviour
             // Rotate the weapon to point into clicked direction
             playerWeapon.transform.LookAt(mouseWorldPosition, Vector3.forward);
 
-            // Do the attack 
+            // Do the attack
             GetComponent<Renderer>().enabled = true;
+            GetComponent<Collider2D>().enabled = true;
             _attacking = true;
-            StartCoroutine(SwingAnimation());
+            StartCoroutine(AttackAnimation());
         }
     }
 
     #region IEnumerators
 
         // Do a single attack
-        private IEnumerator SwingAnimation()
+        private IEnumerator AttackAnimation()
         {
             yield return new WaitForSeconds(attackDuration);
-            GetComponent<Renderer>().enabled = false;
-            _attacking = false;
+            resetAttack();
         }
         #endregion
 

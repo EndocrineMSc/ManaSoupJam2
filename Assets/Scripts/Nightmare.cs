@@ -17,16 +17,18 @@ namespace DreamCatcher.Nightmares
 
         protected Vector2 _direction = new();
 
+        protected bool _gotHit = false;
         protected bool _playerGotHit;
 
         protected Rigidbody2D _rigidbody;
 
         [SerializeField] protected int _health = 2;
+        [SerializeField] protected float _speed;
+        [SerializeField] float iFrameSeconds;
         #endregion
 
         #region Properties
 
-        [SerializeField] protected float _speed;
 
         public float Speed
         {
@@ -45,16 +47,14 @@ namespace DreamCatcher.Nightmares
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("Collide");
             if (collision.gameObject.name.Contains("Player"))
             {               
                 LifeManager.Instance.LoseLife();                            
             }
 
-            if (collision.gameObject.name.Contains("Weapon"))
+            if (collision.gameObject.name.Contains("Weapon") && !_gotHit)
             {
                 StartCoroutine(LoseHealth(1));
-                Debug.Log("Hit");
             }
         }
 
@@ -90,16 +90,19 @@ namespace DreamCatcher.Nightmares
         {
             _health -= damage;
 
+            if (_health <= 0)
+            {
+                Destroy(gameObject);
+            }
+
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
             Color tempColor = spriteRenderer.color;
             spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
+            _gotHit = true;
+            yield return new WaitForSeconds(iFrameSeconds);
             spriteRenderer.color = tempColor;
+            _gotHit = false;
 
-            if (_health <= 0)
-            {
-                Destroy(this);
-            }
         }
 
         #endregion
