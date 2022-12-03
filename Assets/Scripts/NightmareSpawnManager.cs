@@ -17,7 +17,7 @@ namespace DreamCatcher.Nightmares.SpawnerManager
         [SerializeField] private Nightmare _nightmare3;
 
         private bool _moreSpawnsCooldown;
-        private float minimumSpawnCooldown = 0.5f;
+        private float _minimumSpawnCooldown = 0.5f;
         [SerializeField] private float difficultyCooldown = 10;
 
         public static NightmareSpawnManager Instance { get; private set; }
@@ -79,9 +79,9 @@ namespace DreamCatcher.Nightmares.SpawnerManager
             if(!_moreSpawnsCooldown)
             {
                 _moreSpawnsCooldown = true;
-                if (Instance.SpawnTimer > minimumSpawnCooldown)
+                if (Instance.SpawnTimer > _minimumSpawnCooldown)
                 {
-                    Instance.IncreaseSpawnRate(1);
+                    Instance.IncreaseSpawnRate(0.5f);
                     StartCoroutine(MakeGameHarderTimer());
                 }
                 else
