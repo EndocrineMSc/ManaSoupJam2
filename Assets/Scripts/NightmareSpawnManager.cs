@@ -27,7 +27,7 @@ namespace DreamCatcher.Nightmares.SpawnerManager
         #region Properties
 
         [SerializeField] private float _spawnTimer = 10;
-
+       
         public float SpawnTimer
         {
             get { return _spawnTimer; }
