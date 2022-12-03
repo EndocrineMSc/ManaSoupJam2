@@ -77,7 +77,13 @@ namespace DreamCatcher
                 case (GameState.HighscoreMenu):
                     CloseAllCanvases();
                     Instance._highscoreScreen.SetActive(true);
-                    break; 
+                    break;
+
+                case (GameState.Intro):
+                    CloseAllCanvases();
+                    SceneManager.LoadSceneAsync("Intro");
+                    break;
+
 
                 case (GameState.Starting):
                     CloseAllCanvases();

@@ -73,6 +73,12 @@ namespace DreamCatcher.Buttons
             _instance.SwitchState(GameState.MainMenu);
         }
 
+        public void StartIntro()
+        {
+            _audioManager.PlaySoundEffect(SFX.ButtonClick);
+            _instance.SwitchState(GameState.Intro);
+        }
+
         #endregion
 
         #region Private Functions

@@ -749,6 +749,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 257236235}
+    - target: {fileID: 4143529921651182526, guid: abe3fd5b31fc53f4bbcc6c6181357f6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143529921651182526, guid: abe3fd5b31fc53f4bbcc6c6181357f6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DreamCatcher.Buttons.ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe3fd5b31fc53f4bbcc6c6181357f6c, type: 3}
 --- !u!1001 &7009676590918211919
