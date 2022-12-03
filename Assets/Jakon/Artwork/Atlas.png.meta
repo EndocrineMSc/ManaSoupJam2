@@ -125,7 +125,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,6 +133,48 @@ TextureImporter:
       bones: []
       spriteID: 564fa97d3c601f5419b09af4fbc6d7eb
       internalID: -1308567728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c601ffe2863d0b4c83550d09428270a
+      internalID: -840790909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strahl_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 123
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4234f9db8a8b4224e97909fcbcf3c47b
+      internalID: -1083370143
       vertices: []
       indices: 
       edges: []
@@ -148,6 +190,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      player_1: -840790909
+      strahl_0: -1083370143
       player_0: -1308567728
   spritePackingTag: 
   pSDRemoveMatte: 0
