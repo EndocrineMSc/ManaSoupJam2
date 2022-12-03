@@ -86,7 +86,6 @@ namespace DreamCatcher
 
 
                 case (GameState.Starting):
-                    CloseAllCanvases();
                     //PlayGameTrack is a Method in the AudioManager
                     //It plays the Track that is referenced by using a
                     //Track enum in EnumCollection

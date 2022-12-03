@@ -12,14 +12,15 @@ public class IntroText : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _introText;
 
-    private readonly string _text1 = "As usual, it is darkest night when you receive your assignement. There aren't many details, but apparently it'a weird ritual gone wrong.";
-    private readonly string _text2 = "The result: Some teenagers at a far-out camp in the woods contracted \"Manifestion Nightmare Disorder.\"";
-    private readonly string _text3 = "It is your duty as guardian of deep dreams to rid the teenagers of their curse and make the woods safe again";
-    private readonly string _text4 = "Unfortunately, those afflicted tend to wander in there sleep until they have found a remote location in which their nightmares can cross over to reality!";
+    private readonly string _text1 = "As usual, it is darkest night when you receive your assignment. There aren't many details, but apparently it's a weird ritual gone wrong.";
+    private readonly string _text2 = "The result: Some teenagers at a far-out camp in the woods contracted \"Manifestion Nightmare Disorder\".";
+    private readonly string _text3 = "It is your duty as guardian of deep dreams to rid the teenagers of their curse and make the woods safe again.";
+    private readonly string _text4 = "Unfortunately, those afflicted tend to wander in their sleep until they have found a remote location in which their nightmares can cross over to reality!";
     private readonly string _text5 = "Find the sleepers, destroy the nightmares and save the night!";
 
     private List<char> _charList = new List<char>();
     private string[] _introTexts;
+    private string _tempText;
 
     private int _currentText = 0;
     private bool keyDown;
@@ -44,12 +45,15 @@ public class IntroText : MonoBehaviour
     private void Update()
     {
         if (Input.anyKeyDown)
-        {
+        {           
             keyDown = true;
+            _tempText = "";
             _charList.Clear();
             keyDown = false;
             PrintIntroText();    
         }
+
+        _introText.text = _tempText;
     }
 
     private void PrintIntroText()
@@ -63,6 +67,7 @@ public class IntroText : MonoBehaviour
         }
         else
         {
+            StopAllCoroutines();
             GameManager.Instance.SwitchState(GameState.Starting);
         }       
     }
@@ -79,12 +84,12 @@ public class IntroText : MonoBehaviour
     {
         foreach (char c in _charList)
         {
-            _introText.text += c;
-            yield return new WaitForSeconds(0.05f);
+            _tempText += c;
+            yield return new WaitForSeconds(0.02f);
 
             if (keyDown)
             {
-                _introText.text = "";
+                _tempText = "";
                 StopAllCoroutines();
             }
         }
