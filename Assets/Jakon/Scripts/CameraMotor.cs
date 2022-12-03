@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMotor : MonoBehaviour
 {
     public Transform lookAt;
-    public float boundX;
-    public float boundY;
+    public float boundX = 0.15f;
+    public float boundY = 0.05f;
 
     private void LateUpdate()
     {
@@ -40,7 +40,7 @@ public class CameraMotor : MonoBehaviour
             }
         }
 
-        transform.position += new Vector3(delta.x, deltaY, 0);
+        transform.position += new Vector3(delta.x, delta.y, 0);
     }
 
 }
