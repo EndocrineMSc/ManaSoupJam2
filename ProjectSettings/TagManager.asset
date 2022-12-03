@@ -39,8 +39,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 2040905289
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 2870187607
+    locked: 0
+  - name: Characters
+    uniqueID: 2997175977
     locked: 0
   - name: FogOfWar
     uniqueID: 628426069
