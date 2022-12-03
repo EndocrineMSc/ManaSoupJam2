@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] ParticleSystem cleanDreamParticles;
+    [SerializeField] ParticleSystem badDreamParticles;
+    public void TurnOnBadEmission()
     {
+        if (!badDreamParticles.isPlaying)
+        {
+            badDreamParticles.Play();
+        }
+        
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TurnOnGoodEmission()
     {
-        
+        if (!cleanDreamParticles.isPlaying)
+        {
+            cleanDreamParticles.Play();
+        }
     }
 }

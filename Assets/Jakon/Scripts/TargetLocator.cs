@@ -5,11 +5,11 @@ using UnityEngine;
 public class TargetLocator : MonoBehaviour
 {
     [SerializeField] ParticleSystem cleanDreamParticles;
-    [SerializeField] float playerRange = 5f;
+    [SerializeField] float playerRange = 1f;
     Transform target;
+    private NPC _npc;
 
    
-
 
 
     void Update()
@@ -33,6 +33,7 @@ public class TargetLocator : MonoBehaviour
             {
                 closestTarget = npc.transform;
                 maxDistance = targetDistance;
+                _npc = npc;
             }
         }
         target = closestTarget;
@@ -59,6 +60,7 @@ public class TargetLocator : MonoBehaviour
         {
             Debug.Log("Now it should start.");
             cleanDreamParticles.Play();
+            _npc.TurnOnBadEmission();
         }
         else if (!isActive)
         {
