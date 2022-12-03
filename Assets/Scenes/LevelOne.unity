@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 3951471724190745709, guid: b180784018d31a44fb320c1061966500, type: 3}
       propertyPath: cleanDreamParticles
       value: 
-      objectReference: {fileID: 718012466}
+      objectReference: {fileID: 1563196677}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b180784018d31a44fb320c1061966500, type: 3}
 --- !u!1 &519420028
@@ -330,11 +330,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 749eb8f442f4231419b345e981106620, type: 3}
---- !u!198 &718012466 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5980553112515757810, guid: 749eb8f442f4231419b345e981106620, type: 3}
-  m_PrefabInstance: {fileID: 569313164}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &734215154
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8a36e5ae3b7554c8d65ff98089365e, type: 3}
+--- !u!198 &1563196677 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 188017033512097465, guid: b180784018d31a44fb320c1061966500, type: 3}
+  m_PrefabInstance: {fileID: 319267467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2707919252592136575
 PrefabInstance:
   m_ObjectHideFlags: 0

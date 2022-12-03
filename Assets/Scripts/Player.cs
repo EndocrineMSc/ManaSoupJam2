@@ -6,10 +6,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    #region  Fields
+    [SerializeField] GameObject playerWeapon;
+
     private BoxCollider2D boxCollider;
 
-    private Vector3 moveDelta;
+    // private Vector3 moveDelta;
 
+    #endregion 
+
+    #region Methods
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -17,11 +24,16 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        UpdateMovement();
+    }
+
+    private void UpdateMovement()
+    {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        
+
         // Reset moveDelta 
-        moveDelta = Vector3.zero;
+        Vector3 moveDelta = Vector3.zero;
 
         moveDelta = new Vector3(x, y, 0);
 
@@ -40,7 +52,7 @@ public class Player : MonoBehaviour
 
     }
 
-    
+    #endregion
 
 }
 
