@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DreamCatcher.Lives;
-
+using UnityEditor.Experimental.GraphView;
 
 namespace DreamCatcher.Nightmares
 {
     public class Nightmare : MonoBehaviour
     {
         #region Fields
-        [SerializeField] protected GameObject _player;
+        GameObject _player;
         
-        protected float distance;
-        protected float angle;
-        [SerializeField] protected float repellForce; //speed with which the enemy gets repelled when hitting the player
+        protected float _distance;
+        protected float _minimumDistance = 2;
+        protected float _angle;
 
-        protected Vector2 direction = new();
+        protected Vector2 _direction = new();
+
+        protected bool _playerGotHit;
+
+        protected Rigidbody2D _rigidbody;
         #endregion
 
         #region Properties
@@ -40,24 +44,37 @@ namespace DreamCatcher.Nightmares
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.name.Contains("Player"))
-            {
-                LifeManager.Instance.LoseLife();
-
-                Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
-
-                rigidbody.AddForce(new Vector2(-direction.x, -direction.y) * repellForce);
+            {               
+                LifeManager.Instance.LoseLife();                            
             }
         }
 
         protected virtual void Update()
         {
-            distance = Vector2.Distance(transform.position, _player.transform.position);
-            direction = _player.transform.position - transform.position;
-            direction.Normalize();
-            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            transform.SetPositionAndRotation(Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
+            _distance = Vector2.Distance(transform.position, _player.transform.position);
+            _direction = _player.transform.position - transform.position;
+            _direction.Normalize();
+            _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+            
+            if (_distance > _minimumDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
+            }
+            else
+            {
+                //ToDo Attack Code
+            }
         }
+
+        protected virtual void Awake()
+        {
+            _player = GameObject.FindGameObjectWithTag("Player");
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
+        #endregion
+
+        #region IEnumerators
+
 
         #endregion
     }
