@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5441c06d6a76c3046a35fd0e5186ef00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nightmare1: {fileID: 3784789947944076378, guid: 262759387eb341047993f126ad3de45e, type: 3}
+  _nightmare2: {fileID: 3784789947944076378, guid: 262759387eb341047993f126ad3de45e, type: 3}
+  _nightmare3: {fileID: 3784789947944076378, guid: 262759387eb341047993f126ad3de45e, type: 3}
+  difficultyCooldown: 20
+  _spawnTimer: 10

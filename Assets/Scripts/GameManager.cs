@@ -17,7 +17,7 @@ namespace DreamCatcher
     {
         #region Fields
 
-        public static GameManager Instance;
+        public static GameManager Instance { get; private set; }
 
         //Drag and Drop the respective Canvases to these
         [SerializeField] private GameObject _menuScreen;
