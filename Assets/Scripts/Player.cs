@@ -10,8 +10,6 @@ public class Player : MonoBehaviour
     #region  Fields
     private BoxCollider2D boxCollider;
 
-    // private Vector3 moveDelta;
-
     #endregion 
 
     #region Methods
@@ -30,19 +28,17 @@ public class Player : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        // Reset moveDelta 
-        Vector3 moveDelta = Vector3.zero;
-
-        moveDelta = new Vector3(x, y, 0);
+        Vector3 moveDelta = new Vector3(x, y, 0);
+        SpriteRenderer spriteRenderer= GetComponent<SpriteRenderer>();
 
         //Swap sprite direction, whether ur going right or left
         if (moveDelta.x > 0)
         {
-            transform.localScale =new Vector3(2, 2, 2);
+            spriteRenderer.flipX = false;
         }
         else if (moveDelta.x < 0)
         {
-            transform.localScale = new Vector3(-2, 2, 2);
+            spriteRenderer.flipX = true;
         }
 
         //movement
