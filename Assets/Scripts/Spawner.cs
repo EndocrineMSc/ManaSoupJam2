@@ -13,6 +13,7 @@ namespace DreamCatcher.Nightmares.Spawners
         private bool cooldownActive;
         private Transform _spawnPosition;
         private Spawner _instance;
+        private NPC _npc;
 
         #endregion
 
@@ -28,15 +29,14 @@ namespace DreamCatcher.Nightmares.Spawners
         void Start()
         {
             _spawnerManager = NightmareSpawnManager.Instance;
+            _npc = GetComponentInParent<NPC>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(!cooldownActive)
+            if(!cooldownActive && !_npc.IsCleaned)
             {
-                Debug.Log(_spawnerManager);
-                Debug.Log(_spawnPosition);
                 cooldownActive = true;
                 NightmareSpawnManager.Instance.SpawnNightmare(_spawnPosition);
                 float timer = _spawnerManager.SpawnTimer;

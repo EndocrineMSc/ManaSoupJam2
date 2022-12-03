@@ -94,8 +94,14 @@ namespace DreamCatcher
                     AudioManager.Instance.FadeGameTrack(Track.GameTrackOne);
                     break;
 
+                case (GameState.Victory):
+                    Debug.Log("Victory!!!!");
+                    //Do Victory Screen stuff here
+                    break;
+
                 case (GameState.GameOver):
                     //do end of game stuff here
+                    //FailState Stuff here
                     break;
 
                 case (GameState.NewGame):

@@ -11,6 +11,7 @@ namespace EnumCollection
         HighscoreMenu,
         Intro,
         Starting,
+        Victory,
         GameOver,
         NewGame,
         Quit,
