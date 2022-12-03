@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour
     [SerializeField] ParticleSystem cleanDreamParticles;
     [SerializeField] ParticleSystem badDreamParticles;
 
-    protected const float ConversionTime = 10; // seconds
+    protected const float ConversionTime = 5; // seconds
 
     private bool _isCleaned = false;
     private bool _isCleaning = false;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetLocator : MonoBehaviour
 {
-    [SerializeField] ParticleSystem cleanDreamParticles;
+    // [SerializeField] ParticleSystem cleanDreamParticles;
     [SerializeField] float playerRange = 1f;
     // Transform target;
     // private NPC _npc;
@@ -65,18 +65,6 @@ public class TargetLocator : MonoBehaviour
         {
             npcToActivate.stopConversion();
         }
-
-        // if (isActive && !cleanDreamParticles.isPlaying)
-        // {
-        //     Debug.Log("Now it should start.");
-        //     cleanDreamParticles.Play();
-        //     npcToActivate.TurnOnBadEmission();
-        // }
-        // else if (!isActive)
-        // {
-        //     cleanDreamParticles.Stop();
-
-           
     }
 
 }
