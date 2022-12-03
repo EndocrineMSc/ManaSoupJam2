@@ -11,10 +11,18 @@ namespace DreamCatcher.Nightmares.Spawners
 
         private NightmareSpawnManager _spawnerManager;
         private bool cooldownActive;
+        private Transform _spawnPosition;
+        private Spawner _instance;
 
         #endregion
 
         #region Private Functions
+
+        private void Awake()
+        {
+            _instance = this;
+            _spawnPosition = _instance.transform;
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -27,8 +35,10 @@ namespace DreamCatcher.Nightmares.Spawners
         {
             if(!cooldownActive)
             {
+                Debug.Log(_spawnerManager);
+                Debug.Log(_spawnPosition);
                 cooldownActive = true;
-                _spawnerManager.SpawnNightmare(this);
+                NightmareSpawnManager.Instance.SpawnNightmare(_spawnPosition);
                 float timer = _spawnerManager.SpawnTimer;
                 StartCoroutine(TimerClock(timer));
             }

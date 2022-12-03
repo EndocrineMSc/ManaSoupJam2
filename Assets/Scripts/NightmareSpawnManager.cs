@@ -43,9 +43,9 @@ namespace DreamCatcher.Nightmares.SpawnerManager
             _spawnTimer -= timerReduction;
         }
 
-        public void SpawnNightmare(Spawner spawner)
+        public void SpawnNightmare(Transform spawner)
         {
-            Vector2 spawnPosition = spawner.transform.position;
+            Vector2 spawnPosition = spawner.position;
             int randomNightmare = Random.Range(0, _nightmares.Length);
 
             Nightmare tempNightmare = _nightmares[randomNightmare];
