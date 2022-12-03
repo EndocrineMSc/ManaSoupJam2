@@ -20,6 +20,8 @@ namespace DreamCatcher.Nightmares
         protected bool _playerGotHit;
 
         protected Rigidbody2D _rigidbody;
+
+        [SerializeField] protected int _health = 2;
         #endregion
 
         #region Properties
@@ -41,11 +43,16 @@ namespace DreamCatcher.Nightmares
 
         #region Protected Functions
 
-        protected virtual void OnCollisionEnter2D(Collision2D collision)
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.name.Contains("Player"))
             {               
                 LifeManager.Instance.LoseLife();                            
+            }
+
+            if (collision.gameObject.name.Contains("Sword"))
+            {
+                LoseHealth(1);
             }
         }
 
@@ -70,6 +77,18 @@ namespace DreamCatcher.Nightmares
         {
             _player = GameObject.FindGameObjectWithTag("Player");
             _rigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        protected void LoseHealth(int damage)
+        {
+            _health -= damage;
+
+            if (_health <= 0)
+            {
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.color = Color.red;
+                Destroy(this);
+            }
         }
         #endregion
 
