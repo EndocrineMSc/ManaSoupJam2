@@ -11,9 +11,11 @@ namespace DreamCatcher.Nightmares
         #region Fields
         GameObject _player;
         
+        // Why is this a field? Only used locally
         protected float _distance;
         protected float _minimumDistance = 1f;
         protected float _angle;
+
 
         protected Vector2 _direction = new();
 
@@ -24,7 +26,9 @@ namespace DreamCatcher.Nightmares
 
         [SerializeField] protected int _health = 2;
         [SerializeField] protected float _speed;
+        [SerializeField] protected float attackReach;
         [SerializeField] float iFrameSeconds;
+        [SerializeField] GameObject Attack;
         #endregion
 
         #region Properties
@@ -54,7 +58,9 @@ namespace DreamCatcher.Nightmares
 
             if (collision.gameObject.name.Contains("Weapon") && !_gotHit)
             {
-                StartCoroutine(LoseHealth(1));
+                // Cast the collision object to "Weapon" and extract the damage. Or reference statically (ugly)
+                int damage = 1;
+                StartCoroutine(LoseHealth(damage));
             }
         }
 
@@ -69,9 +75,9 @@ namespace DreamCatcher.Nightmares
             {
                 transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             }
-            else
+            else if (_distance <= attackReach)
             {
-                //ToDo Attack Code
+                // Attack.attack(); get the direction from here, as the player position is already known
             }
         }
 
