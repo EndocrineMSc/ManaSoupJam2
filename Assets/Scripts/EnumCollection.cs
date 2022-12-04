@@ -27,6 +27,16 @@ namespace EnumCollection
     public enum SFX
     {
         ButtonClick,
-        PlayerGotHit,
+        Eule,
+        Playerdamage1,
+        Playerdamage2, 
+        MonsterSound,
+        PlayerHitSound,
+        Feuerknistern,
+        Schnarchen1,
+        Schnarchen2,
+        Grillenzirpen,
+        Footsteps,
+
     }
 }
