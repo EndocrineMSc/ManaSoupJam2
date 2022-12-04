@@ -7481,7 +7481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8759,9 +8759,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FogOfWarSecondaryCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 472455630669786776, guid: 219d097e1e050f44db918a1955187b4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 472455630669786778, guid: 219d097e1e050f44db918a1955187b4e, type: 3}
       propertyPath: orthographic size
-      value: 60
+      value: 65.09757
       objectReference: {fileID: 0}
     - target: {fileID: 472455630669786779, guid: 219d097e1e050f44db918a1955187b4e, type: 3}
       propertyPath: m_RootOrder
@@ -18873,12 +18877,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106938447634785721, guid: b1f3418c273ee0a4da70b1d9c613655d, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106938447634785721, guid: b1f3418c273ee0a4da70b1d9c613655d, type: 3}
+      propertyPath: field of view
+      value: 7.441838
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106938447634785721, guid: b1f3418c273ee0a4da70b1d9c613655d, type: 3}
       propertyPath: orthographic size
-      value: 60
+      value: 64.98646
       objectReference: {fileID: 0}
     - target: {fileID: 2106938447634785723, guid: b1f3418c273ee0a4da70b1d9c613655d, type: 3}
       propertyPath: m_Name
       value: FogOfWarMainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106938447634785723, guid: b1f3418c273ee0a4da70b1d9c613655d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f3418c273ee0a4da70b1d9c613655d, type: 3}
@@ -20375,7 +20391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699900212575801842, guid: 749eb8f442f4231419b345e981106620, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8874147
+      value: 17.14
       objectReference: {fileID: 0}
     - target: {fileID: 5699900212575801842, guid: 749eb8f442f4231419b345e981106620, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23185,6 +23201,18 @@ PrefabInstance:
       value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -23202,15 +23230,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333492, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -23236,9 +23264,25 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 38546155620333493, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_RenderMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546155620333493, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 628426069
+      objectReference: {fileID: 0}
     - target: {fileID: 38546155620333496, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_Name
       value: 'FogOfWarCanvas '
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546155620333498, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546155620333499, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 38546156228506592, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_Material
@@ -23247,6 +23291,14 @@ PrefabInstance:
     - target: {fileID: 38546156228506593, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546156228506593, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 38546156228506598, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
