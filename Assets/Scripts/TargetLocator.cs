@@ -8,7 +8,7 @@ using DreamCatcher.Audio;
 public class TargetLocator : MonoBehaviour
 {
     // [SerializeField] ParticleSystem cleanDreamParticles;
-    [SerializeField] float playerRange = 2f;
+    [SerializeField] float playerRange = 100f;
     // Transform target;
     // private NPC _npc;
 

@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8587f3e968b4494a8d4c1ad343a58db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeapon: {fileID: 3402534275062805507}
+  playerWeapon: {fileID: 3311499624467431961}
   attackDuration: 0.3
 --- !u!61 &5190069138547538665
 BoxCollider2D:
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd9855b43713d34d949dccc1aae8462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRange: 1
+  playerRange: 1.6
 --- !u!61 &7804508246453695492
 BoxCollider2D:
   m_ObjectHideFlags: 0
