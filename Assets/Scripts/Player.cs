@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateMovement();
-        AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
     }
 
     private void UpdateMovement()
@@ -39,15 +38,23 @@ public class Player : MonoBehaviour
         if (moveDelta.x > 0)
         {
             spriteRenderer.flipX = false;
+            
         }
         else if (moveDelta.x < 0)
         {
             spriteRenderer.flipX = true;
+            
         }
 
         //movement
         transform.Translate(moveDelta * Time.deltaTime * _speed);
-
+        if(x != 0 || y != 0)
+        {
+            AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
+        }else
+        {
+            AudioManager.Instance.StopSoundEffect(SFX.Footsteps);
+        }
     }
 
     #endregion
