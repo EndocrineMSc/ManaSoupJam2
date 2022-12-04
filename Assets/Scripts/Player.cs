@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        animator.enabled = false;
     }
 
     private void Update()
@@ -56,7 +57,6 @@ public class Player : MonoBehaviour
 
     private void UpdateMovement()
     {
-        
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
@@ -100,8 +100,9 @@ public class Player : MonoBehaviour
 
         private IEnumerator DashCooldown()
         {
-            yield return new WaitForSeconds(dashCooldownSeconds);
+            yield return new WaitForSeconds(Mathf.Min(1,dashCooldownSeconds/10));
             GameObject.Find("PlayerHitbox").GetComponent<BoxCollider2D>().isTrigger = true;
+            yield return new WaitForSeconds(Mathf.Max(dashCooldownSeconds-1,9*dashCooldownSeconds/10));
             _dashCooldown = false;
         }
 }
