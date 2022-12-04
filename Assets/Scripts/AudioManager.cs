@@ -29,16 +29,23 @@ namespace DreamCatcher.Audio
         //playing or not. Uses the enum Track to get a specific
         //Track according to the enum from the Track-List
         //Order in List will be according to order in GameObject
-        public void FadeGameTrack(Track track)
+
+        public void FadeInGameTrack(Track track)
         {
             AudioSource audioSource = _gameTracks[(int)track];
 
             if (!audioSource.isPlaying || audioSource.volume == 0)
             {
                 audioSource.volume = 0;
-                StartCoroutine(StartFade(audioSource, 3f, 1f));
+                StartCoroutine(StartFade(audioSource, 3f, 0.5f));
             }
-            else
+        }
+
+        public void FadeOutGameTrack(Track track)
+        {
+            AudioSource audioSource = _gameTracks[(int)track];
+
+            if (audioSource.isPlaying)
             {
                 StartCoroutine(StartFade(audioSource, 3f, 0f));
             }
@@ -63,7 +70,6 @@ namespace DreamCatcher.Audio
             {
                 audioSource.Stop();
             }
-
         }
 
         #endregion
@@ -84,12 +90,15 @@ namespace DreamCatcher.Audio
             }
 
             DontDestroyOnLoad(this);
+
+
+            _gameTracks = _gameTracksObject.GetComponents<AudioSource>().ToList<AudioSource>();
+            _soundEffects = _soundEffectsObject.GetComponents<AudioSource>().ToList<AudioSource>();
         }
 
         private void Start()
         {
-            _gameTracks = _gameTracksObject.GetComponents<AudioSource>().ToList<AudioSource>();
-            _soundEffects = _soundEffectsObject.GetComponents<AudioSource>().ToList<AudioSource>();
+            
         }
 
         #endregion
