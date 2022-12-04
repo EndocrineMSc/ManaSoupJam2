@@ -47,3 +47,4 @@ MonoBehaviour:
   _lifeOne: {fileID: 0}
   _lifeTwo: {fileID: 0}
   _lifeThree: {fileID: 0}
+  iFramesSeconds: 0.6

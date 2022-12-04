@@ -21,8 +21,10 @@ namespace DreamCatcher.Lives
         [SerializeField] private GameObject _lifeOne;
         [SerializeField] private GameObject _lifeTwo;
         [SerializeField] private GameObject _lifeThree;
+        [SerializeField] private float iFramesSeconds;
 
         public static LifeManager Instance;
+        private bool _gotHit = false;
 
         #endregion
 
@@ -47,9 +49,10 @@ namespace DreamCatcher.Lives
         //for example on collision with enemies or similar
         public void LoseLife()
         {
-            if (_lives > 0)
+            if (_lives > 0 && !_gotHit)
             {
                 _lives--;
+                StartCoroutine(handle_iFrames());
             }
 
             //switches visual representation of lives on and off
@@ -100,5 +103,16 @@ namespace DreamCatcher.Lives
         }
 
         #endregion
+
+       private IEnumerator handle_iFrames()
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            Color tempColor = spriteRenderer.color;
+            spriteRenderer.color = Color.red;
+            _gotHit = true;
+            yield return new WaitForSeconds(iFramesSeconds);
+            spriteRenderer.color = tempColor;
+            _gotHit = false;
+        }
     }
 }
