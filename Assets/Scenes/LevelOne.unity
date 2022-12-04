@@ -17926,7 +17926,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &1266970480 stripped
 Transform:
@@ -18536,6 +18536,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ed2a4d702a520459800725a0dccf19, type: 3}
+--- !u!1 &1320802762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6973763745636903264, guid: 18ed2a4d702a520459800725a0dccf19, type: 3}
+  m_PrefabInstance: {fileID: 1320802761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1320802763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6973763745874235556, guid: 18ed2a4d702a520459800725a0dccf19, type: 3}
+  m_PrefabInstance: {fileID: 1320802761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1320802764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6973763745641821833, guid: 18ed2a4d702a520459800725a0dccf19, type: 3}
+  m_PrefabInstance: {fileID: 1320802761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1321691735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24231,7 +24246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1740765460
 MonoBehaviour:
@@ -26807,7 +26822,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1919675968
 PrefabInstance:
@@ -30531,15 +30546,15 @@ PrefabInstance:
     - target: {fileID: 2707919254462980370, guid: e4e4407b6cd408148bbef915200f8386, type: 3}
       propertyPath: _lifeOne
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1320802764}
     - target: {fileID: 2707919254462980370, guid: e4e4407b6cd408148bbef915200f8386, type: 3}
       propertyPath: _lifeTwo
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1320802763}
     - target: {fileID: 2707919254462980370, guid: e4e4407b6cd408148bbef915200f8386, type: 3}
       propertyPath: _lifeThree
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1320802762}
     - target: {fileID: 2707919254462980371, guid: e4e4407b6cd408148bbef915200f8386, type: 3}
       propertyPath: m_Name
       value: LifeManager
