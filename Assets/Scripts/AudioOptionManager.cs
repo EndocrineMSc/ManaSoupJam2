@@ -25,17 +25,17 @@ namespace DreamCatcher.AudioOptions
         //of logarihtmic, because decibels are on a log scale
         public void SetMasterVolume(float volume)
         {
-            _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) *20f : -80f);
+            _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
         }
 
         public void SetMusicVolume(float volume)
         {
-            _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
+            _audioMixer.SetFloat("Music", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
         }
 
         public void SetEffectsVolume(float volume)
         {
-            _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
+            _audioMixer.SetFloat("SFX", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
             //Play an exemplary SFX to give the play an auditory volume feedback
             AudioManager.Instance.PlaySoundEffect(SFX.ButtonClick);
         }
