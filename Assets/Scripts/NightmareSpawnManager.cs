@@ -19,8 +19,8 @@ namespace DreamCatcher.Nightmares.SpawnerManager
         [SerializeField] private Nightmare _nightmare5;
 
         private bool _moreSpawnsCooldown;
-        private float _minimumSpawnCooldown = 0.5f;
-        [SerializeField] private float difficultyCooldown = 10;
+        private float _minimumSpawnCooldown = 2f;
+        private float difficultyCooldown = 20;
 
         public static NightmareSpawnManager Instance { get; private set; }
 
@@ -28,7 +28,7 @@ namespace DreamCatcher.Nightmares.SpawnerManager
 
         #region Properties
 
-        [SerializeField] private float _spawnTimer = 10;
+        private float _spawnTimer = 10;
        
         public float SpawnTimer
         {
