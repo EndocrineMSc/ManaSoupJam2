@@ -9726,6 +9726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cleanDreamParticles: {fileID: 188017033512097465}
   badDreamParticles: {fileID: 3951471723405786924}
+  ConversionTimeSeconds: 5
 --- !u!1001 &3219277089574551876
 PrefabInstance:
   m_ObjectHideFlags: 0

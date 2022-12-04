@@ -6,9 +6,8 @@ public class NPC : MonoBehaviour
 {
     [SerializeField] ParticleSystem cleanDreamParticles;
     [SerializeField] ParticleSystem badDreamParticles;
-
-    protected const float ConversionTime = 5; // seconds
-
+    [SerializeField] float ConversionTimeSeconds;
+    
     private bool _isCleaned = false;
     private bool _isCleaning = false;
     private float _conversionCounter = 0;
@@ -22,16 +21,18 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        if(_conversionCounter > 0)
+        if(_isCleaning)
         {
-            _conversionCounter -= Time.deltaTime;
-        } 
-        else if (!_isCleaned)
-        {
-            _isCleaned = true;
-            badDreamParticles.Stop();
-            TurnOnGoodEmission();
-            Debug.Log("NPC Converted");
+            if( _conversionCounter > 0)
+            {
+                _conversionCounter -= Time.deltaTime;
+            } 
+            else
+            {
+                _isCleaned = true;
+                badDreamParticles.Stop();
+                TurnOnGoodEmission();
+            }
         }
     }
 
@@ -39,6 +40,7 @@ public class NPC : MonoBehaviour
     {
         if(!_isCleaning && !_isCleaned)
         {
+            _isCleaning = true;
             TurnOnBadEmission();
         }
     }
@@ -48,7 +50,7 @@ public class NPC : MonoBehaviour
         if(!_isCleaned)
         {
             _isCleaning = false;
-            _conversionCounter = ConversionTime;
+            _conversionCounter = ConversionTimeSeconds;
             badDreamParticles.Stop();
         }
         
@@ -74,6 +76,6 @@ public class NPC : MonoBehaviour
 
     public void Awake()
     {
-        _conversionCounter = ConversionTime;
+        _conversionCounter = ConversionTimeSeconds;
     }
 }
