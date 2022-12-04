@@ -95,7 +95,7 @@ namespace DreamCatcher
                     break;
 
                 case (GameState.Victory):
-                    Debug.Log("Victory!!!!");
+                    SceneManager.LoadSceneAsync("Victory");
                     //Do Victory Screen stuff here
                     break;
 
