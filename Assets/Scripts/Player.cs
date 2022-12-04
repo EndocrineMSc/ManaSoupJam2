@@ -98,8 +98,9 @@ public class Player : MonoBehaviour
 
         private IEnumerator DashCooldown()
         {
-            yield return new WaitForSeconds(dashCooldownSeconds);
+            yield return new WaitForSeconds(Mathf.Min(1,dashCooldownSeconds/10));
             GameObject.Find("PlayerHitbox").GetComponent<BoxCollider2D>().isTrigger = true;
+            yield return new WaitForSeconds(Mathf.Max(dashCooldownSeconds-1,9*dashCooldownSeconds/10));
             _dashCooldown = false;
         }
 }
