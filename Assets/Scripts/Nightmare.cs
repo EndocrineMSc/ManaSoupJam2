@@ -52,7 +52,6 @@ namespace DreamCatcher.Nightmares
         {
             if (collision.gameObject.name.Contains("Player"))
             {   
-                Debug.Log("Player hit!");            
                 LifeManager.Instance.LoseLife();
             }
 
