@@ -34,7 +34,7 @@ namespace DreamCatcher.Lives
 
         //lives property allows to get the remaining player
         //lives from other scripts
-        private int _lives;
+        private int _lives = 3;
 
         public int Lives
         {
@@ -53,9 +53,8 @@ namespace DreamCatcher.Lives
         {
             if (_lives > 0 && !_gotHit)
             {
-                _lives--;
-                AudioManager.Instance.PlaySoundEffect(SFX.Playerdamage1);
                 StartCoroutine(handle_iFrames());
+                _lives--;
             }
 
             //switches visual representation of lives on and off
@@ -79,8 +78,8 @@ namespace DreamCatcher.Lives
                 case 1:
                     _lifeTwo.SetActive(false);
                     break;
-
-                case 0:
+                // None of the above? Ded
+                default:
                     _lifeOne.SetActive(false);
                     GameManager.Instance.SwitchState(GameState.GameOver);
                     break;
@@ -109,12 +108,13 @@ namespace DreamCatcher.Lives
 
        private IEnumerator handle_iFrames()
         {
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            Color tempColor = spriteRenderer.color;
-            spriteRenderer.color = Color.red;
             _gotHit = true;
+            AudioManager.Instance.PlaySoundEffect(SFX.Playerdamage1);
+            // SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            // Color tempColor = spriteRenderer.color;
+            // spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(iFramesSeconds);
-            spriteRenderer.color = tempColor;
+            // spriteRenderer.color = tempColor;
             _gotHit = false;
         }
     }
