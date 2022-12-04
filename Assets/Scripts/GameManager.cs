@@ -106,6 +106,7 @@ namespace DreamCatcher
 
                 case (GameState.NewGame):
                     //do reset game stuff here, in case player restarts in-game
+                    SceneManager.LoadSceneAsync("LevelOne");
                     break;
 
                 case (GameState.Quit):
