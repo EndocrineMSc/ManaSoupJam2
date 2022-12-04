@@ -29,15 +29,15 @@ public class Player : MonoBehaviour
        {
             animator.SetTrigger("playerUp");
        } 
-       else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-       {
-            animator.SetTrigger("playerLeft");
-       }
-       else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+              if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
        {
             animator.SetTrigger("playerDown");
        }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+       if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+       {
+            animator.SetTrigger("playerLeft");
+       }
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             animator.SetTrigger("playerRight");
         }
