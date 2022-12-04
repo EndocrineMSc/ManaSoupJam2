@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EnumCollection;
+using DreamCatcher.Audio;
+
 
 public class TargetLocator : MonoBehaviour
 {
@@ -48,10 +51,13 @@ public class TargetLocator : MonoBehaviour
         if (targetDistance < playerRange)
         {
             Activate(npcToToggle, true);
+            StartCoroutine(SchnarchOnce());
         }
         else
         {
             Activate(npcToToggle, false);
+            AudioManager.Instance.StopSoundEffect(SFX.Schnarchen1);
+
         }
     }
 
@@ -65,6 +71,13 @@ public class TargetLocator : MonoBehaviour
         {
             npcToActivate.stopConversion();
         }
+    }
+    // Do a single Schnarch
+    private IEnumerator SchnarchOnce()
+    {
+        AudioManager.Instance.PlaySoundEffect(SFX.Schnarchen1);
+        yield return new WaitForSeconds(5.0f);
+        AudioManager.Instance.StopSoundEffect(SFX.Schnarchen1);
     }
 
 }
