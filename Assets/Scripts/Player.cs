@@ -48,7 +48,13 @@ public class Player : MonoBehaviour
 
         //movement
         transform.Translate(moveDelta * Time.deltaTime * _speed);
-        AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
+        if(x != 0 || y != 0)
+        {
+            AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
+        }else
+        {
+            AudioManager.Instance.StopSoundEffect(SFX.Footsteps);
+        }
     }
 
     #endregion
