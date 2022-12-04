@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EnumCollection;
+using DreamCatcher.Audio;
 
 public class NPC : MonoBehaviour
 {
@@ -38,6 +40,7 @@ public class NPC : MonoBehaviour
                 TurnOnGoodEmission();
             }
         }
+        AudioManager.Instance.PlaySoundEffect(SFX.Schnarchen1);
     }
 
     public void startConversion()

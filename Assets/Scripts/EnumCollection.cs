@@ -28,10 +28,10 @@ namespace EnumCollection
     {
         ButtonClick,
         Eule,
-        Playerdamage1,
-        Playerdamage2, 
-        MonsterSound,
         PlayerHitSound,
+        PlayerHitSound2,
+        MonsterSound,
+        Playerdamage1, 
         Feuerknistern,
         Schnarchen1,
         Schnarchen2,

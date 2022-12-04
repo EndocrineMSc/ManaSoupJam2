@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using EnumCollection;
+using DreamCatcher.Audio;
 using UnityEngine;
 
 public class WeaponBehavior : MonoBehaviour
@@ -41,6 +43,7 @@ public class WeaponBehavior : MonoBehaviour
             GetComponent<Collider2D>().enabled = true;
             _attacking = true;
             StartCoroutine(AttackAnimation());
+           
         }
     }
 
@@ -49,9 +52,13 @@ public class WeaponBehavior : MonoBehaviour
         // Do a single attack
         private IEnumerator AttackAnimation()
         {
-            yield return new WaitForSeconds(attackDuration);
-            resetAttack();
+        AudioManager.Instance.PlaySoundEffect(SFX.PlayerHitSound2);
+        yield return new WaitForSeconds(attackDuration);
+        resetAttack();
+        AudioManager.Instance.StopSoundEffect(SFX.PlayerHitSound2);
         }
+
+    
     #endregion
 
 }
