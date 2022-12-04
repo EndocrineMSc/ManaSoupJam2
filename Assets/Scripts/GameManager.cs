@@ -22,8 +22,7 @@ namespace DreamCatcher
         //Drag and Drop the respective Canvases to these
         [SerializeField] private GameObject _menuScreen;
         [SerializeField] private GameObject _creditsScreen;
-        [SerializeField] private GameObject _settingsScreen;
-        [SerializeField] private GameObject _highscoreScreen;        
+        [SerializeField] private GameObject _settingsScreen;    
 
         #endregion
 
@@ -78,11 +77,6 @@ namespace DreamCatcher
                     Instance._settingsScreen.SetActive(true);
                     break;   
 
-                case (GameState.HighscoreMenu):
-                    CloseAllCanvases();
-                    Instance._highscoreScreen.SetActive(true);
-                    break;
-
                 case (GameState.Intro):
                     CloseAllCanvases();
                     SceneManager.LoadSceneAsync("Intro");
@@ -109,8 +103,8 @@ namespace DreamCatcher
                     break;
 
                 case (GameState.NewGame):
-                    //do reset game stuff here, in case player restarts in-game
-                    SceneManager.LoadSceneAsync("LevelOne");
+                    Instance.SwitchState(GameState.MainMenu);
+                    AudioManager.Instance.StopAllSoundEffects();
                     break;
 
                 case (GameState.Quit):
@@ -132,7 +126,6 @@ namespace DreamCatcher
             Instance._menuScreen.SetActive(false);
             Instance._creditsScreen.SetActive(false);
             Instance._settingsScreen.SetActive(false);
-            Instance._highscoreScreen.SetActive(false);
         }
 
         //Awake, so that it runs before the Start Functions of other

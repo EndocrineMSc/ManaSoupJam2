@@ -72,6 +72,14 @@ namespace DreamCatcher.Audio
             }
         }
 
+        public void StopAllSoundEffects()
+        {
+            foreach (AudioSource source in _soundEffects)
+            {
+                source.Stop();
+            }
+        }
+
         #endregion
 
         #region Private Functions
@@ -94,11 +102,6 @@ namespace DreamCatcher.Audio
 
             _gameTracks = _gameTracksObject.GetComponents<AudioSource>().ToList<AudioSource>();
             _soundEffects = _soundEffectsObject.GetComponents<AudioSource>().ToList<AudioSource>();
-        }
-
-        private void Start()
-        {
-            
         }
 
         #endregion
