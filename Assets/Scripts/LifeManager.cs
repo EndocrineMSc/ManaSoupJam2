@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DreamCatcher;
 using EnumCollection;
+using DreamCatcher.Audio;
+
 
 
 namespace DreamCatcher.Lives
@@ -52,6 +54,7 @@ namespace DreamCatcher.Lives
             if (_lives > 0 && !_gotHit)
             {
                 _lives--;
+                AudioManager.Instance.PlaySoundEffect(SFX.Playerdamage1);
                 StartCoroutine(handle_iFrames());
             }
 
