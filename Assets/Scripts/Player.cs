@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using EnumCollection;
+using DreamCatcher.Audio;
 using UnityEngine;
 
 
@@ -10,7 +12,7 @@ public class Player : MonoBehaviour
     #region  Fields
     private BoxCollider2D boxCollider;
     [SerializeField] private float _speed;
-
+    
     #endregion 
 
     #region Methods
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateMovement();
+        AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
     }
 
     private void UpdateMovement()

@@ -37,7 +37,7 @@ namespace DreamCatcher.AudioOptions
         {
             _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
             //Play an exemplary SFX to give the play an auditory volume feedback
-            AudioManager.Instance.PlaySoundEffect(SFX.PlayerGotHit);
+            AudioManager.Instance.PlaySoundEffect(SFX.ButtonClick);
         }
 
         #endregion
