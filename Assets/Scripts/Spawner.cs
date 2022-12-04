@@ -35,7 +35,7 @@ namespace DreamCatcher.Nightmares.Spawners
         // Update is called once per frame
         void Update()
         {
-            if(!cooldownActive && !_npc.IsCleaned)
+            if(!cooldownActive && !(_npc.IsCleaned || _npc.IsCleaning))
             {
                 cooldownActive = true;
                 NightmareSpawnManager.Instance.SpawnNightmare(_spawnPosition);

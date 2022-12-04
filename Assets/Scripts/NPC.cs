@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour
     [SerializeField] ParticleSystem cleanDreamParticles;
     [SerializeField] ParticleSystem badDreamParticles;
     [SerializeField] float ConversionTimeSeconds;
-    
+
     private bool _isCleaned = false;
     private bool _isCleaning = false;
     private float _conversionCounter = 0;
@@ -15,7 +15,11 @@ public class NPC : MonoBehaviour
     public bool IsCleaned
     {
         get { return _isCleaned; }
-        private set { _isCleaned = value; }
+    }
+
+    public bool IsCleaning
+    {
+        get { return _isCleaning; }
     }
 
 
