@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nightmare1: {fileID: 3784789947944076378, guid: 262759387eb341047993f126ad3de45e, type: 3}
-  _nightmare2: {fileID: 3784789947944076378, guid: 262759387eb341047993f126ad3de45e, type: 3}
-  _nightmare3: {fileID: 3784789947944076378, guid: 262759387eb341047993f126ad3de45e, type: 3}
+  _nightmare2: {fileID: 844792745186823387, guid: d7fd17537c5a35c4780d3cd740e090b0, type: 3}
+  _nightmare3: {fileID: 2081557247309439334, guid: d3779836966d84d4dac8293cb1a95536, type: 3}
+  _nightmare4: {fileID: 5714527033035654736, guid: 72a4179e631f686488c9b36add2d6f63, type: 3}
+  _nightmare5: {fileID: 6326253424360566908, guid: ee58b6c27b522a74f8a71061e264311c, type: 3}
   difficultyCooldown: 20
   _spawnTimer: 10

@@ -44,9 +44,6 @@ namespace DreamCatcher.WinCondtion
                 }
             }
 
-            Debug.Log(currentlyCleaned);
-            Debug.Log(needToBeCleaned);
-
             if (currentlyCleaned == needToBeCleaned)
             {
                 GameManager.Instance.SwitchState(GameState.Victory);

@@ -15,6 +15,8 @@ namespace DreamCatcher.Nightmares.SpawnerManager
         [SerializeField] private Nightmare _nightmare1;
         [SerializeField] private Nightmare _nightmare2;
         [SerializeField] private Nightmare _nightmare3;
+        [SerializeField] private Nightmare _nightmare4;
+        [SerializeField] private Nightmare _nightmare5;
 
         private bool _moreSpawnsCooldown;
         private float _minimumSpawnCooldown = 0.5f;
@@ -71,7 +73,7 @@ namespace DreamCatcher.Nightmares.SpawnerManager
 
         private void Start()
         {
-            _nightmares = new Nightmare[] { _nightmare1, _nightmare2, _nightmare3 };
+            _nightmares = new Nightmare[] { _nightmare1, _nightmare2, _nightmare3, _nightmare4, _nightmare5 };
         }
 
         private void Update()
