@@ -35,14 +35,12 @@ namespace DreamCatcher.Buttons
         {
             _audioManager.PlaySoundEffect(SFX.ButtonClick);
             _instance.SwitchState(GameState.Quit);
-
         }
 
         public void GoToCredits()
         {
             _audioManager.PlaySoundEffect(SFX.ButtonClick);
             _instance.SwitchState(GameState.Credits);
-
         }
 
         public void GoToHighscores()
@@ -70,7 +68,7 @@ namespace DreamCatcher.Buttons
         public void GoToMainMenu()
         {
             _audioManager.PlaySoundEffect(SFX.ButtonClick);
-            _instance.SwitchState(GameState.MainMenu);
+            _instance.SwitchState(GameState.MainMenu); 
         }
 
         public void StartIntro()

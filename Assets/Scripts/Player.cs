@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Animator animator;
     [SerializeField] private float _speed;
+    [SerializeField] private float dashDistance;
+    [SerializeField] private float dashCooldownSeconds;
+    private bool _dashCooldown = false;
     
     #endregion 
 
@@ -53,6 +56,7 @@ public class Player : MonoBehaviour
 
     private void UpdateMovement()
     {
+        
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
@@ -72,6 +76,14 @@ public class Player : MonoBehaviour
 
         //movement
         transform.Translate(moveDelta * Time.deltaTime * _speed);
+
+        if(Input.GetButtonDown("Fire2") && !_dashCooldown && moveDelta != Vector3.zero) {
+            _dashCooldown = true;
+            transform.Translate(Vector3.Normalize(moveDelta) * dashDistance);
+            GameObject.Find("PlayerHitbox").GetComponent<BoxCollider2D>().isTrigger = false;
+            StartCoroutine(DashCooldown());
+        }
+
         if(x != 0 || y != 0)
         {
             AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
@@ -85,5 +97,12 @@ public class Player : MonoBehaviour
 
     #endregion
 
+
+        private IEnumerator DashCooldown()
+        {
+            yield return new WaitForSeconds(dashCooldownSeconds);
+            GameObject.Find("PlayerHitbox").GetComponent<BoxCollider2D>().isTrigger = true;
+            _dashCooldown = false;
+        }
 }
 

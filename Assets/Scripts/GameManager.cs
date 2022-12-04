@@ -58,15 +58,19 @@ namespace DreamCatcher
                     {
                         SceneManager.LoadSceneAsync("MainMenu");
                     }
+                    AudioManager.Instance.FadeInGameTrack(Track.MainMenu);
+                    AudioManager.Instance.FadeOutGameTrack(Track.CreditsMusic);
+                    AudioManager.Instance.FadeOutGameTrack(Track.GameTrack);
 
                     CloseAllCanvases();
-                    Instance._menuScreen.SetActive(true);
-                    AudioManager.Instance.FadeGameTrack(Track.MainMenu); // Fix this crap
+                    Instance._menuScreen.SetActive(true);                 
                     break;
 
                 case (GameState.Credits):
                     CloseAllCanvases();
                     Instance._creditsScreen.SetActive(true);
+                    AudioManager.Instance.FadeOutGameTrack(Track.MainMenu);
+                    AudioManager.Instance.FadeInGameTrack(Track.CreditsMusic);
                     break; 
 
                 case (GameState.Settings):
@@ -90,18 +94,18 @@ namespace DreamCatcher
                     //It plays the Track that is referenced by using a
                     //Track enum in EnumCollection
                     SceneManager.LoadSceneAsync("LevelOne");
-                    AudioManager.Instance.FadeGameTrack(Track.MainMenu);
-                    AudioManager.Instance.FadeGameTrack(Track.GameTrackOne);
+                    AudioManager.Instance.FadeOutGameTrack(Track.MainMenu);
+                    AudioManager.Instance.FadeInGameTrack(Track.GameTrack);
                     break;
 
                 case (GameState.Victory):
                     SceneManager.LoadSceneAsync("Victory");
-                    //Do Victory Screen stuff here
+                    AudioManager.Instance.PlaySoundEffect(SFX.Victory);
                     break;
 
                 case (GameState.GameOver):
                     SceneManager.LoadSceneAsync("GameOver");
-                    //FailState Stuff here
+                    AudioManager.Instance.PlaySoundEffect(SFX.Gameover);
                     break;
 
                 case (GameState.NewGame):
