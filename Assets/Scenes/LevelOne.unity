@@ -20381,6 +20381,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784164740119684228, guid: 749eb8f442f4231419b345e981106620, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5699900212575801840, guid: 749eb8f442f4231419b345e981106620, type: 3}
       propertyPath: m_Name
       value: Player
@@ -23278,7 +23282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333496, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 38546155620333498, guid: c9748f23f774cc54297c19548cd9ad2c, type: 3}
       propertyPath: m_PresetInfoIsWorld
