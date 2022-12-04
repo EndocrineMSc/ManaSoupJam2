@@ -100,7 +100,7 @@ namespace DreamCatcher
                     break;
 
                 case (GameState.GameOver):
-                    //do end of game stuff here
+                    SceneManager.LoadSceneAsync("GameOver");
                     //FailState Stuff here
                     break;
 
