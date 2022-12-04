@@ -37,7 +37,7 @@ namespace DreamCatcher.Audio
             if (!audioSource.isPlaying || audioSource.volume == 0)
             {
                 audioSource.volume = 0;
-                StartCoroutine(StartFade(audioSource, 3f, 0.5f));
+                StartCoroutine(StartFade(audioSource, 3f, 0.25f));
             }
         }
 

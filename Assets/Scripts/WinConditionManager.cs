@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
+using TMPro;
 
 namespace DreamCatcher.WinCondtion
 {
@@ -13,6 +14,8 @@ namespace DreamCatcher.WinCondtion
         private GameObject[] _spawnerObjects;
         private List<NPC> _spawnerList = new List<NPC>();
         private int needToBeCleaned;
+        [SerializeField] private TextMeshProUGUI _counter;
+        private int remainingDreamers;
 
         #endregion
 
@@ -30,6 +33,7 @@ namespace DreamCatcher.WinCondtion
             }
 
             needToBeCleaned = _spawnerList.Count;
+            remainingDreamers = needToBeCleaned;
         }
 
         // Update is called once per frame
@@ -48,6 +52,10 @@ namespace DreamCatcher.WinCondtion
             {
                 GameManager.Instance.SwitchState(GameState.Victory);
             }
+
+            remainingDreamers = needToBeCleaned - currentlyCleaned;
+
+            _counter.text = "Remaining Dreamers: " + remainingDreamers;
         }
 
         #endregion
