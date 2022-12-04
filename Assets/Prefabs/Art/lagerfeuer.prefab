@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3033667718862435108}
   - component: {fileID: 2021770091724372143}
   - component: {fileID: 548604802740996029}
+  - component: {fileID: 4381156205801709472}
   m_Layer: 0
   m_Name: lagerfeuer
   m_TagString: Untagged
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4381156205801709472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3033667718862435130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c4f361b732f9f4383925fb92f04423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

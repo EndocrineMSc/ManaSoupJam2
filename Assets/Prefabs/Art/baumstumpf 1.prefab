@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3301254059022013347}
   - component: {fileID: 2982450819825436375}
   - component: {fileID: 2698481144957431435}
+  - component: {fileID: -8256251133628869771}
   m_Layer: 7
   m_Name: baumstumpf 1
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1424779689
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1f40894911f60ed448ce01293cd04d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8256251133628869771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822243668955878887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c4f361b732f9f4383925fb92f04423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

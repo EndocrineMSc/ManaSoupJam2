@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4612920276566525289}
   - component: {fileID: 4579901544260507601}
   - component: {fileID: 619808086014777052}
+  - component: {fileID: -2264302856458354939}
   m_Layer: 7
   m_Name: Zelt 2 gespiegelt
   m_TagString: Untagged
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2264302856458354939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933990594484051939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c4f361b732f9f4383925fb92f04423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
