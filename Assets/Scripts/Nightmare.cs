@@ -76,7 +76,7 @@ namespace DreamCatcher.Nightmares
             
             if (_distance > _minimumDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             }
             else if (_distance <= attackReach)
             {
