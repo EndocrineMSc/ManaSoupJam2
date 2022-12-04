@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     #region  Fields
     private BoxCollider2D boxCollider;
+    [SerializeField] private float _speed;
 
     #endregion 
 
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
         }
 
         //movement
-        transform.Translate(moveDelta * Time.deltaTime);
+        transform.Translate(moveDelta * Time.deltaTime * _speed);
 
     }
 
