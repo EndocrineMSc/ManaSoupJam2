@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetLocator : MonoBehaviour
 {
     // [SerializeField] ParticleSystem cleanDreamParticles;
-    [SerializeField] float playerRange = 1f;
+    [SerializeField] float playerRange = 2f;
     // Transform target;
     // private NPC _npc;
 

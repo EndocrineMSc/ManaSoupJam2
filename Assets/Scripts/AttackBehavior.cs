@@ -27,7 +27,7 @@ public class AttackBehavior : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawLine(enemyWeapon.transform.position, Vector3.zero,Color.red, 40f);
+        // Debug.DrawLine(enemyWeapon.transform.position, Vector3.zero,Color.red, 40f);
     }
 
     public void attack(GameObject player)
