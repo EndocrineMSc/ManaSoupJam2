@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        animator.enabled = false;
     }
 
     private void Update()
@@ -56,7 +57,6 @@ public class Player : MonoBehaviour
 
     private void UpdateMovement()
     {
-        
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
