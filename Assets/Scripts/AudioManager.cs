@@ -56,6 +56,16 @@ namespace DreamCatcher.Audio
             }
         }
 
+        public void StopSoundEffect(SFX sfx)
+        {
+            AudioSource audioSource = _soundEffects[(int)sfx];
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
+        }
+
         #endregion
 
         #region Private Functions
