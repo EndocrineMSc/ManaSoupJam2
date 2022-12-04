@@ -133,7 +133,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7009676590906344516, guid: 7ee14a672ea561b439b93427d37ca3a2, type: 3}
   m_PrefabInstance: {fileID: 7009676590918211919}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7009676590918211920}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc56873ad34bebe499f32f1431e00bf0, type: 3}
@@ -645,7 +645,11 @@ PrefabInstance:
     - target: {fileID: 1772157674520942277, guid: abe3fd5b31fc53f4bbcc6c6181357f6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 257236235}
+      objectReference: {fileID: 7009676590918211920}
+    - target: {fileID: 1772157674520942277, guid: abe3fd5b31fc53f4bbcc6c6181357f6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3032645120535809277, guid: abe3fd5b31fc53f4bbcc6c6181357f6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -817,6 +821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee14a672ea561b439b93427d37ca3a2, type: 3}
+--- !u!1 &7009676590918211920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7009676590906344519, guid: 7ee14a672ea561b439b93427d37ca3a2, type: 3}
+  m_PrefabInstance: {fileID: 7009676590918211919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7040193512820488313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -855,6 +864,10 @@ PrefabInstance:
     - target: {fileID: 2166863365536317023, guid: 29ac0e8f4cbd4084c87f914cbbc3cb26, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241641045931624309, guid: 29ac0e8f4cbd4084c87f914cbbc3cb26, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3241641045931624309, guid: 29ac0e8f4cbd4084c87f914cbbc3cb26, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

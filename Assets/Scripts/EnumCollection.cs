@@ -20,8 +20,8 @@ namespace EnumCollection
     public enum Track
     {
         MainMenu,
-        GameTrackOne,
-        GameTrackTwos,
+        CreditsMusic,
+        GameTrack,
     }
 
     public enum SFX
@@ -37,6 +37,8 @@ namespace EnumCollection
         Schnarchen2,
         Grillenzirpen,
         Footsteps,
+        Victory,
+        Gameover,
 
     }
 }
