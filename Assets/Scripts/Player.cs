@@ -29,13 +29,13 @@ public class Player : MonoBehaviour
        {
             animator.SetTrigger("playerUp");
        } 
+              if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+       {
+            animator.SetTrigger("playerDown");
+       }
        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
        {
             animator.SetTrigger("playerLeft");
-       }
-       if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-       {
-            animator.SetTrigger("playerDown");
        }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
