@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     #region  Fields
     private BoxCollider2D boxCollider;
+    private Animator animator;
     [SerializeField] private float _speed;
     
     #endregion 
@@ -19,6 +20,28 @@ public class Player : MonoBehaviour
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+       if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+       {
+            animator.SetTrigger("playerUp");
+       } 
+       else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+       {
+            animator.SetTrigger("playerLeft");
+       }
+       else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+       {
+            animator.SetTrigger("playerDown");
+       }
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            animator.SetTrigger("playerRight");
+        }
+
     }
 
     private void FixedUpdate()
@@ -33,12 +56,11 @@ public class Player : MonoBehaviour
 
         Vector3 moveDelta = new Vector3(x, y, 0);
         SpriteRenderer spriteRenderer= GetComponent<SpriteRenderer>();
-
+        
         //Swap sprite direction, whether ur going right or left
         if (moveDelta.x > 0)
         {
             spriteRenderer.flipX = false;
-            
         }
         else if (moveDelta.x < 0)
         {
@@ -51,9 +73,11 @@ public class Player : MonoBehaviour
         if(x != 0 || y != 0)
         {
             AudioManager.Instance.PlaySoundEffect(SFX.Footsteps);
+            animator.enabled = true;
         }else
         {
             AudioManager.Instance.StopSoundEffect(SFX.Footsteps);
+            animator.enabled = false;
         }
     }
 
