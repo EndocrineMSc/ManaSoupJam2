@@ -31,11 +31,11 @@ public class Player : MonoBehaviour
     {
 
         
-       if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+       if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
        {
             animator.SetTrigger("playerUp");
        } 
-              if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+       if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
        {
             animator.SetTrigger("playerDown");
        }
@@ -43,10 +43,10 @@ public class Player : MonoBehaviour
        {
             animator.SetTrigger("playerLeft");
        }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
+       if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+       {
             animator.SetTrigger("playerRight");
-        }
+       }
 
     }
      
