@@ -103,8 +103,8 @@ namespace DreamCatcher
                     break;
 
                 case (GameState.NewGame):
-                    Instance.SwitchState(GameState.MainMenu);
                     AudioManager.Instance.StopAllSoundEffects();
+                    Instance.SwitchState(GameState.MainMenu);
                     break;
 
                 case (GameState.Quit):

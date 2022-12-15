@@ -80,6 +80,14 @@ namespace DreamCatcher.Audio
             }
         }
 
+        public void StopAllTracks()
+        {
+            foreach (AudioSource source in _gameTracks)
+            {
+                source.Stop();
+            }
+        }
+
         #endregion
 
         #region Private Functions
@@ -99,9 +107,17 @@ namespace DreamCatcher.Audio
 
             DontDestroyOnLoad(this);
 
-
             _gameTracks = _gameTracksObject.GetComponents<AudioSource>().ToList<AudioSource>();
             _soundEffects = _soundEffectsObject.GetComponents<AudioSource>().ToList<AudioSource>();
+        }
+
+        private void Start()
+        {
+            foreach (AudioSource source in _gameTracks)
+            {
+                source.volume = 0;
+                source.Play();
+            }
         }
 
         #endregion
@@ -119,6 +135,7 @@ namespace DreamCatcher.Audio
                 audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
                 yield return null;
             }
+            audioSource.volume = targetVolume;
         }
 
         #endregion
